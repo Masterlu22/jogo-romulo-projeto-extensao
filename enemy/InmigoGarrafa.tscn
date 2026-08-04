@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://buleoo37j43bc"]
+
+[ext_resource type="Texture2D" uid="uid://c6plcnmkuy052" path="res://enemy/garrafa.png" id="1_yihcn"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2i63t"]
+radius = 23.0
+height = 122.0
+
+[node name="GarrafaInmigo" type="CharacterBody2D" unique_id=1909693823]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=951766768]
+scale = Vector2(0.35351563, 0.40781254)
+texture = ExtResource("1_yihcn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1616859731]
+position = Vector2(-3, 3)
+shape = SubResource("CapsuleShape2D_2i63t")

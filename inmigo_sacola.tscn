@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b5a2ce0hwl6nk"]
+
+[ext_resource type="Texture2D" uid="uid://u3c1agdgvjar" path="res://enemy/sacola.png" id="1_sjapy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uhfv4"]
+size = Vector2(81, 67)
+
+[node name="InmigoSacola" type="CharacterBody2D" unique_id=570536813]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1416105460]
+scale = Vector2(0.037158206, 0.030473633)
+texture = ExtResource("1_sjapy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2030182818]
+position = Vector2(-3.5, -1)
+shape = SubResource("RectangleShape2D_uhfv4")

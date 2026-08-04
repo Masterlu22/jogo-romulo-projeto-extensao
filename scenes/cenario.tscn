@@ -1,0 +1,265 @@
+[gd_scene format=3 uid="uid://bil6xeb7tta2y"]
+
+[ext_resource type="Texture2D" uid="uid://bap0wbvp0d23e" path="res://background/Background-export.png" id="1_2p5gn"]
+[ext_resource type="PackedScene" uid="uid://bdrwqedkc1ddk" path="res://player/player.tscn" id="2_2p5gn"]
+[ext_resource type="PackedScene" uid="uid://buleoo37j43bc" path="res://enemy/InmigoGarrafa.tscn" id="3_4xtve"]
+[ext_resource type="PackedScene" uid="uid://b5a2ce0hwl6nk" path="res://inmigo_sacola.tscn" id="4_kfbu0"]
+[ext_resource type="Texture2D" uid="uid://dca7iygejgnyt" path="res://icons/PauseIcone.PNG" id="5_5nwxu"]
+[ext_resource type="Texture2D" uid="uid://cjb0wt0dyjami" path="res://icons/AudioIcone.PNG" id="5_410sj"]
+[ext_resource type="Texture2D" uid="uid://b3e4wpcil63dx" path="res://icons/menuIcone.PNG" id="6_y434u"]
+[ext_resource type="Texture2D" uid="uid://d08g041n52wcq" path="res://icons/IconeReproduzir.PNG" id="7_bn0f3"]
+[ext_resource type="Script" uid="uid://bewe6g58jhsa8" path="res://scenes/pause.gd" id="7_v7i8m"]
+[ext_resource type="Texture2D" uid="uid://cv1clo5q01v5e" path="res://icons/TutorialIcone.PNG" id="7_y434u"]
+[ext_resource type="Texture2D" uid="uid://cy4yjtd7lr6fk" path="res://scenes/tutorial.png" id="9_02sax"]
+[ext_resource type="PackedScene" uid="uid://rxslqid54mig" path="res://tartaruga.tscn" id="9_jcrot"]
+[ext_resource type="Script" uid="uid://b2tfx8lxrhjvq" path="res://tutorial.gd" id="9_pydug"]
+[ext_resource type="Texture2D" uid="uid://b6bhhrog03w5n" path="res://icons/TimerIcone.PNG" id="10_45gbj"]
+[ext_resource type="Script" uid="uid://dbtim6udoafri" path="res://scenes/menu.gd" id="10_hswkh"]
+[ext_resource type="Script" uid="uid://7ejybl56d42s" path="res://fechar.gd" id="11_rvcw7"]
+[ext_resource type="Script" uid="uid://cyqho1ft2bkht" path="res://scenes/timer.gd" id="14_i5jc7"]
+[ext_resource type="Script" uid="uid://dc0jhvfn5yop6" path="res://scenes/voltar_a_jogar.gd" id="16_2t6fq"]
+[ext_resource type="Script" uid="uid://bwq4av0685ko6" path="res://scenes/sair_do_game.gd" id="17_xels8"]
+[ext_resource type="Script" uid="uid://hm3n7f02s8rl" path="res://scenes/recomeçar.gd" id="18_ai8ut"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y32ns"]
+size = Vector2(1165, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wtcfe"]
+size = Vector2(1149.5, 54)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2p5gn"]
+size = Vector2(690, 49.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4xtve"]
+size = Vector2(654.5, 20)
+
+[sub_resource type="Theme" id="Theme_410sj"]
+Button/icons/icon = ExtResource("5_410sj")
+
+[sub_resource type="Theme" id="Theme_jcrot"]
+
+[sub_resource type="Theme" id="Theme_v7i8m"]
+
+[node name="Cenario" type="Node2D" unique_id=87024340]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2107630580]
+position = Vector2(570.125, 325)
+scale = Vector2(1.8214842, 1.5975001)
+texture = ExtResource("1_2p5gn")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=733031124]
+texture_filter = 1
+position = Vector2(-6, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1577087212]
+position = Vector2(572.5, -9)
+shape = SubResource("RectangleShape2D_y32ns")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=969569899]
+position = Vector2(585.25, 635)
+shape = SubResource("RectangleShape2D_wtcfe")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1746573893]
+position = Vector2(-25.000002, 334)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_2p5gn")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1720185429]
+position = Vector2(1174, 326.75)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_4xtve")
+
+[node name="CharacterBody2D" parent="." unique_id=1393837532 instance=ExtResource("2_2p5gn")]
+texture_filter = 1
+position = Vector2(455, 411)
+scale = Vector2(0.74446607, 0.62402344)
+
+[node name="GarrafaInmigo" parent="." unique_id=1909693823 instance=ExtResource("3_4xtve")]
+position = Vector2(813, 75)
+
+[node name="GarrafaInmigo2" parent="." unique_id=804891054 instance=ExtResource("3_4xtve")]
+position = Vector2(396, 83)
+
+[node name="InmigoSacola" parent="." unique_id=570536813 instance=ExtResource("4_kfbu0")]
+position = Vector2(587, 158)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2089750937]
+
+[node name="pause_fundo" type="ColorRect" parent="CanvasLayer" unique_id=1988110207]
+process_mode = 3
+visible = false
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 0.65882355)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=1746778038]
+custom_minimum_size = Vector2(48, 48)
+offset_right = 161.0
+offset_bottom = 325.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/HBoxContainer" unique_id=836134636]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Pause" type="TextureButton" parent="CanvasLayer/HBoxContainer/VBoxContainer" unique_id=861822824]
+process_mode = 3
+custom_minimum_size = Vector2(62, 62)
+layout_mode = 2
+theme = SubResource("Theme_410sj")
+texture_normal = ExtResource("5_5nwxu")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("7_v7i8m")
+texture_pause = ExtResource("5_5nwxu")
+texture_play = ExtResource("7_bn0f3")
+
+[node name="Menu" type="TextureButton" parent="CanvasLayer/HBoxContainer/VBoxContainer" unique_id=871576492]
+process_mode = 3
+custom_minimum_size = Vector2(62, 62)
+layout_mode = 2
+texture_normal = ExtResource("6_y434u")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("10_hswkh")
+
+[node name="Tutorial" type="TextureButton" parent="CanvasLayer/HBoxContainer/VBoxContainer" unique_id=593837994]
+process_mode = 3
+custom_minimum_size = Vector2(62, 62)
+layout_mode = 2
+theme = SubResource("Theme_jcrot")
+texture_normal = ExtResource("7_y434u")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("9_pydug")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer" unique_id=773393539]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -161.0
+offset_bottom = 325.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/HBoxContainer2" unique_id=702883865]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 0
+
+[node name="sound" type="TextureButton" parent="CanvasLayer/HBoxContainer2/VBoxContainer" unique_id=1377354540]
+process_mode = 3
+custom_minimum_size = Vector2(62, 62)
+layout_mode = 2
+theme = SubResource("Theme_410sj")
+texture_normal = ExtResource("5_410sj")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="timer" type="TextureButton" parent="CanvasLayer/HBoxContainer2/VBoxContainer" unique_id=1739642559]
+custom_minimum_size = Vector2(62, 62)
+layout_mode = 2
+theme = SubResource("Theme_v7i8m")
+texture_normal = ExtResource("10_45gbj")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("14_i5jc7")
+
+[node name="label_tempo" type="Label" parent="CanvasLayer/HBoxContainer2/VBoxContainer/timer" unique_id=890292406]
+layout_mode = 0
+offset_top = 66.0
+offset_right = 62.0
+offset_bottom = 89.0
+text = "00:00"
+
+[node name="tutorial painel" type="Control" parent="CanvasLayer" unique_id=1319982995]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/tutorial painel" unique_id=641043921]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.0004491884, 0.0004491884, 0.0004491884, 0.65882355)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/tutorial painel" unique_id=1422963356]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 74.0
+offset_right = 1064.8889
+offset_bottom = 574.0
+texture = ExtResource("9_02sax")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Fechar" type="Button" parent="CanvasLayer/tutorial painel/TextureRect" unique_id=212012094]
+process_mode = 3
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "X"
+script = ExtResource("11_rvcw7")
+
+[node name="menu_painel" type="Control" parent="CanvasLayer" unique_id=2012965634]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/menu_painel" unique_id=1218108559]
+process_mode = 3
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 0.65882355)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/menu_painel" unique_id=576924626]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -79.0
+offset_right = 100.0
+offset_bottom = 79.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Voltar a jogar" type="Button" parent="CanvasLayer/menu_painel/VBoxContainer" unique_id=310713123]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Voltar a jogar"
+script = ExtResource("16_2t6fq")
+
+[node name="Recomeçar" type="Button" parent="CanvasLayer/menu_painel/VBoxContainer" unique_id=1608917028]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Recomeçar"
+script = ExtResource("18_ai8ut")
+
+[node name="Sair do game" type="Button" parent="CanvasLayer/menu_painel/VBoxContainer" unique_id=1925657684]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Sair do game"
+script = ExtResource("17_xels8")
+
+[node name="tartaruga" parent="." unique_id=1996568221 instance=ExtResource("9_jcrot")]
+position = Vector2(257, 560)
+
+[node name="tartaruga2" parent="." unique_id=1868561689 instance=ExtResource("9_jcrot")]
+position = Vector2(484, 556)
+
+[node name="tartaruga3" parent="." unique_id=928180389 instance=ExtResource("9_jcrot")]
+position = Vector2(734, 551)
+
+[connection signal="pressed" from="CanvasLayer/HBoxContainer/VBoxContainer/Tutorial" to="CharacterBody2D" method="_on_tutorial_pressed"]

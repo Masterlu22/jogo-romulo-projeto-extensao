@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bdrwqedkc1ddk"]
+
+[ext_resource type="Script" uid="uid://doowtm0cinlyt" path="res://scripts/script_player.gd" id="1_rkbax"]
+[ext_resource type="Texture2D" uid="uid://370y7wm1tl31" path="res://player/RomuloFinal.png" id="2_rkbax"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kqu6x"]
+radius = 75.0
+height = 228.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oul6g"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1393837532]
+position = Vector2(67, 55)
+script = ExtResource("1_rkbax")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=872840487]
+position = Vector2(-55.500008, -58.500008)
+scale = Vector2(0.653125, 0.6343749)
+texture = ExtResource("2_rkbax")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=288289693]
+position = Vector2(-62, -55)
+shape = SubResource("CapsuleShape2D_kqu6x")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=882490491]
+sprite_frames = SubResource("SpriteFrames_oul6g")
+animation = &"idle"

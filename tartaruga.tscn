@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://rxslqid54mig"]
+
+[ext_resource type="Texture2D" uid="uid://bmejlnoptj4or" path="res://personagens coadjuvantes/tartarugaCoadjuvante.png" id="1_bayb4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bayb4"]
+radius = 35.0
+height = 70.0
+
+[node name="tartaruga" type="CharacterBody2D" unique_id=1996568221]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1448010796]
+scale = Vector2(0.3007576, 0.22968748)
+texture = ExtResource("1_bayb4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1083160271]
+position = Vector2(-7, 13)
+shape = SubResource("CapsuleShape2D_bayb4")

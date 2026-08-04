@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://5jyktesnpu3l"]
+
+[ext_resource type="Script" uid="uid://d0t0khfahyarc" path="res://title_screen.gd" id="1_ig5kc"]
+[ext_resource type="Texture2D" uid="uid://bap0wbvp0d23e" path="res://background/Background-export.png" id="1_v6p8y"]
+[ext_resource type="Theme" uid="uid://dpdgxiy0pk0hv" path="res://default_btn.tres" id="2_ig5kc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ak2if"]
+
+[node name="Tela_inicial" type="Control" unique_id=105182076]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ig5kc")
+
+[node name="bg" type="TextureRect" parent="." unique_id=250763801]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_v6p8y")
+expand_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1184588495]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=256171912]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1594929330]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="start_button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=164764970]
+texture_filter = 1
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+theme = ExtResource("2_ig5kc")
+text = "Start"
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1278367476]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ak2if")
+
+[node name="quit_button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1724990011]
+texture_filter = 1
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+theme = ExtResource("2_ig5kc")
+text = "quit"
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/start_button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/quit_button" to="." method="_on_quit_button_pressed"]
