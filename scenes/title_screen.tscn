@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://5jyktesnpu3l"]
 
-[ext_resource type="Script" uid="uid://d0t0khfahyarc" path="res://title_screen.gd" id="1_ig5kc"]
+[ext_resource type="Script" uid="uid://d0t0khfahyarc" path="res://scripts/title_screen.gd" id="1_ig5kc"]
 [ext_resource type="Texture2D" uid="uid://bap0wbvp0d23e" path="res://background/Background-export.png" id="1_v6p8y"]
 [ext_resource type="Theme" uid="uid://dpdgxiy0pk0hv" path="res://default_btn.tres" id="2_ig5kc"]
 

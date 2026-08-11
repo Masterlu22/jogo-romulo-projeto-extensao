@@ -5,4 +5,5 @@ func _ready():
 
 func _on_pressed():
 	get_tree().root.get_node("Cenario/CanvasLayer/menu_painel").visible = false
-	get_tree().paused = false
+	if not get_tree().root.get_node("Cenario/CanvasLayer/pause_fundo").visible:
+		get_tree().paused = false

@@ -7,6 +7,7 @@ radius = 35.0
 height = 70.0
 
 [node name="tartaruga" type="CharacterBody2D" unique_id=1996568221]
+collision_mask = 7
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1448010796]
 scale = Vector2(0.3007576, 0.22968748)
