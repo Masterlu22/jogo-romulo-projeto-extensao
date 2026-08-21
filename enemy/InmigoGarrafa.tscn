@@ -10,6 +10,10 @@ height = 106.0
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2i63t"]
 bg_color = Color(1, 0, 0, 1)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e0383"]
+radius = 20.0
+height = 112.0
+
 [node name="GarrafaInmigo" type="CharacterBody2D" unique_id=1909693823 groups=["inimigos"]]
 collision_layer = 2
 collision_mask = 0
@@ -33,3 +37,12 @@ theme_override_font_sizes/font_size = 12
 theme_override_styles/fill = SubResource("StyleBoxFlat_2i63t")
 value = 100.0
 show_percentage = false
+
+[node name="area_dano" type="Area2D" parent="." unique_id=1006434146]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area_dano" unique_id=2122022078]
+position = Vector2(-4, 8)
+shape = SubResource("CapsuleShape2D_e0383")
+
+[connection signal="body_entered" from="area_dano" to="." method="_on_area_dano_body_entered"]

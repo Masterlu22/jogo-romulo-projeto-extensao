@@ -1,13 +1,16 @@
 [gd_scene format=3 uid="uid://rxslqid54mig"]
 
 [ext_resource type="Texture2D" uid="uid://bmejlnoptj4or" path="res://personagens coadjuvantes/tartarugaCoadjuvante.png" id="1_bayb4"]
+[ext_resource type="Script" uid="uid://cyyrx8ab0oj2m" path="res://personagens coadjuvantes/tartaruga.gd" id="1_dotlj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bayb4"]
 radius = 35.0
 height = 70.0
 
-[node name="tartaruga" type="CharacterBody2D" unique_id=1996568221]
-collision_mask = 7
+[node name="tartaruga" type="CharacterBody2D" unique_id=1996568221 groups=["tartarugas"]]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_dotlj")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1448010796]
 scale = Vector2(0.3007576, 0.22968748)

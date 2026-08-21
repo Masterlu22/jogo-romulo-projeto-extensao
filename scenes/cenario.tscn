@@ -23,6 +23,8 @@
 [ext_resource type="Script" uid="uid://dyg512wfqkqv5" path="res://scripts/label_score.gd" id="17_l8t4l"]
 [ext_resource type="Script" uid="uid://bwq4av0685ko6" path="res://scripts/sair_do_game.gd" id="17_xels8"]
 [ext_resource type="Script" uid="uid://hm3n7f02s8rl" path="res://scripts/recomeçar.gd" id="18_ai8ut"]
+[ext_resource type="Texture2D" uid="uid://clskl160iyoj1" path="res://icons/Coracao.png" id="23_noqsl"]
+[ext_resource type="Texture2D" uid="uid://bmejlnoptj4or" path="res://personagens coadjuvantes/tartarugaCoadjuvante.png" id="24_1grh0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y32ns"]
 size = Vector2(1165, 20)
@@ -42,7 +44,13 @@ Button/icons/icon = ExtResource("5_410sj")
 [sub_resource type="Theme" id="Theme_jcrot"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_835ul"]
-bg_color = Color(0, 0.7272031, 0.12589857, 1)
+bg_color = Color(0.83137256, 0.8666667, 0.3254902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p2mo2"]
+bg_color = Color(0.64705884, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l8t4l"]
+bg_color = Color(0, 0.69803923, 0, 1)
 
 [sub_resource type="Theme" id="Theme_v7i8m"]
 
@@ -144,7 +152,69 @@ offset_top = 198.0
 offset_right = 80.0
 offset_bottom = 225.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_835ul")
+show_percentage = false
 script = ExtResource("14_ff1v8")
+
+[node name="life_bar" type="ProgressBar" parent="CanvasLayer" unique_id=1693022836]
+custom_minimum_size = Vector2(160, 30)
+offset_top = 234.0
+offset_right = 62.0
+offset_bottom = 261.0
+theme_override_styles/background = SubResource("StyleBoxFlat_p2mo2")
+theme_override_styles/fill = SubResource("StyleBoxFlat_l8t4l")
+value = 100.0
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer" unique_id=1735627408]
+offset_top = 284.0
+offset_right = 128.0
+offset_bottom = 324.0
+
+[node name="icon_vida3" type="TextureRect" parent="CanvasLayer/HBoxContainer3" unique_id=863689584]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture = ExtResource("23_noqsl")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="icon_vida2" type="TextureRect" parent="CanvasLayer/HBoxContainer3" unique_id=1064743089]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture = ExtResource("23_noqsl")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="icon_vida" type="TextureRect" parent="CanvasLayer/HBoxContainer3" unique_id=1621897346]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture = ExtResource("23_noqsl")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="CanvasLayer" unique_id=1740144311]
+offset_top = 323.0
+offset_right = 131.0
+offset_bottom = 363.0
+
+[node name="icon_tartaruga3" type="TextureRect" parent="CanvasLayer/HBoxContainer4" unique_id=1347956470]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture = ExtResource("24_1grh0")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="icon_tartaruga2" type="TextureRect" parent="CanvasLayer/HBoxContainer4" unique_id=102774528]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture = ExtResource("24_1grh0")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="icon_tartaruga" type="TextureRect" parent="CanvasLayer/HBoxContainer4" unique_id=1483092649]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture = ExtResource("24_1grh0")
+expand_mode = 3
+stretch_mode = 5
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer" unique_id=773393539]
 anchors_preset = 1

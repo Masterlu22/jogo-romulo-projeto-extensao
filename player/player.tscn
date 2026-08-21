@@ -68,7 +68,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"attack",
-"speed": 20.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -124,7 +124,7 @@ texture_filter = 1
 texture_repeat = 2
 scale = Vector2(4.1875, 4.5000005)
 sprite_frames = SubResource("SpriteFrames_oul6g")
-animation = &"walk"
+animation = &"attack"
 autoplay = "idle"
 
 [node name="hitbox_espada" type="Area2D" parent="." unique_id=1099428875]

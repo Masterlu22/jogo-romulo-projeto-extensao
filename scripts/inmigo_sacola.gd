@@ -4,6 +4,8 @@ var knockback := Vector2.ZERO
 var velocidade := 80.0
 var player: Node2D
 var vida := 100.0
+var alvo_especial = null
+var indo_para_tartaruga := false
 
 @onready var barra_vida = $Barra_vida_sacola
 
@@ -16,6 +18,11 @@ func _physics_process(delta: float) -> void:
 	if knockback.length() > 0:
 		velocity = knockback
 		knockback = knockback.move_toward(Vector2.ZERO, 20.0)
+	elif alvo_especial and is_instance_valid(alvo_especial):
+		var direcao: Vector2 = (alvo_especial.global_position - global_position).normalized()
+		velocity = direcao * velocidade
+	elif GameManager.atordoado and not indo_para_tartaruga:
+		velocity = Vector2.ZERO
 	elif player:
 		var direcao := (player.global_position - global_position).normalized()
 		velocity = direcao * velocidade
@@ -41,9 +48,18 @@ func tomar_dano(quantidade: float):
 	
 	if vida <= 0:
 		queue_free()
-		
+
+func set_alvo(alvo):
+	alvo_especial = alvo	
+	indo_para_tartaruga = true
+	$area_dano.collision_mask |= 8
 		
 func _on_area_dano_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		body.tomar_dano(global_position)
-	
+	elif body.is_in_group("tartarugas"):
+		body.ser_eliminada()
+		alvo_especial = null	
+		indo_para_tartaruga = false
+		$area_dano.collision_mask &= ~8
+		GameManager.tartaruga_eliminada()
