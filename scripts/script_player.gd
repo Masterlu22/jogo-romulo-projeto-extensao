@@ -33,7 +33,14 @@ func _physics_process(delta: float) -> void:
 			velocity.y = directiony * SPEED
 		else:
 			velocity.y = move_toward(velocity.y, 0, SPEED)
-
+		
+		if directionx > 0:
+			anim.flip_h = false
+			hitbox.scale.x = 1.0
+		elif directionx < 0:
+			anim.flip_h = true
+			hitbox.scale.x = -1.0
+			
 	move_and_slide()
 
 	if Input.is_action_just_pressed("attack"):

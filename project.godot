@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Novo Projeto de Jogo teste"
+config/name="jogo_romulo_projeto_extensao"
 run/main_scene="uid://bil6xeb7tta2y"
 config/features=PackedStringArray("4.6", "Mobile")
 
