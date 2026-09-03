@@ -18,7 +18,7 @@ func reset():
 
 func adicionar_pontos(valor: int):
 	pontuacao += valor
-	especial = min(100.0, especial + valor * 0.1)
+	especial = min(100.0, especial + valor * 0.02)
 	
 func perder_vida():
 	atordoado = true
@@ -45,5 +45,6 @@ func tartaruga_eliminada():
 	print("vidas restantes ", vidas)
 	
 	if vidas <= 0:
-		print("game over!!")
+		atordoado = false
+		await Engine.get_main_loop().create_timer(0.5).timeout
 		Engine.get_main_loop().change_scene_to_file("res://game_over.tscn")

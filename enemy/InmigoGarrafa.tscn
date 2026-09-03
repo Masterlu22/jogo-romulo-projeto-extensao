@@ -1,7 +1,36 @@
 [gd_scene format=3 uid="uid://buleoo37j43bc"]
 
 [ext_resource type="Script" uid="uid://ubmlofrianfo" path="res://enemy/inmigo_garrafa.gd" id="1_2i63t"]
-[ext_resource type="Texture2D" uid="uid://c6plcnmkuy052" path="res://enemy/garrafa.png" id="1_yihcn"]
+[ext_resource type="Texture2D" uid="uid://b1u6q0qfqmeo8" path="res://animations/garrafaAnimacao.png" id="2_2i63t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0383"]
+atlas = ExtResource("2_2i63t")
+region = Rect2(0, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2md0"]
+atlas = ExtResource("2_2i63t")
+region = Rect2(320, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrhg3"]
+atlas = ExtResource("2_2i63t")
+region = Rect2(640, 0, 320, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8wpex"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0383")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o2md0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xrhg3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2i63t"]
 radius = 21.0
@@ -14,14 +43,16 @@ bg_color = Color(1, 0, 0, 1)
 radius = 20.0
 height = 112.0
 
-[node name="GarrafaInmigo" type="CharacterBody2D" unique_id=1909693823 groups=["inimigos"]]
+[node name="GarrafaInmigo" type="CharacterBody2D" unique_id=1909693823 groups=["garrafa", "inimigos"]]
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_2i63t")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=951766768]
-scale = Vector2(0.35351563, 0.40781254)
-texture = ExtResource("1_yihcn")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1117468365]
+position = Vector2(0.99999964, 0)
+scale = Vector2(0.36875004, 0.390625)
+sprite_frames = SubResource("SpriteFrames_8wpex")
+autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1616859731]
 position = Vector2(-4, 9)

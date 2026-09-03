@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://yhm8mm5s1bel" path="res://scripts/cenario.gd" id="1_i5jc7"]
 [ext_resource type="PackedScene" uid="uid://bdrwqedkc1ddk" path="res://player/player.tscn" id="2_2p5gn"]
 [ext_resource type="PackedScene" uid="uid://buleoo37j43bc" path="res://enemy/InmigoGarrafa.tscn" id="3_4xtve"]
+[ext_resource type="PackedScene" uid="uid://c3o7r0uyph5cw" path="res://enemy/inimigo_canudo.tscn" id="4_1grh0"]
 [ext_resource type="PackedScene" uid="uid://b5a2ce0hwl6nk" path="res://enemy/inmigo_sacola.tscn" id="4_kfbu0"]
 [ext_resource type="Texture2D" uid="uid://dca7iygejgnyt" path="res://icons/PauseIcone.PNG" id="5_5nwxu"]
 [ext_resource type="Texture2D" uid="uid://cjb0wt0dyjami" path="res://icons/AudioIcone.PNG" id="5_410sj"]
@@ -58,6 +59,7 @@ bg_color = Color(0, 0.69803923, 0, 1)
 script = ExtResource("1_i5jc7")
 cena_sacola = ExtResource("4_kfbu0")
 cena_garrafa = ExtResource("3_4xtve")
+cena_canudo = ExtResource("4_1grh0")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2107630580]
 position = Vector2(570.125, 325)

@@ -63,16 +63,19 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 
 func _on_hitbox_espada_body_entered(body):
 	if body.is_in_group("inimigos"):
+		print("nome do inimigo: ", body.name)
 		GameManager.adicionar_pontos(15)
 		var dano = 25.0
 		
-		if "Garrafa" in body.name:
+		if body.is_in_group("garrafa"):
 			dano = 10.0
+		elif body.is_in_group("canudo"):
+			dano = 50.0
 			
 		var vida_antes = body.vida	
 		body.tomar_dano(dano)
 		
-		if vida_antes <= 25.0:
+		if vida_antes <= dano:
 			mortes_no_ataque += 1
 			if mortes_no_ataque >= 2:
 				GameManager.adicionar_pontos(100)

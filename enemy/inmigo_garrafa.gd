@@ -11,7 +11,6 @@ var indo_para_tartaruga := false
 var knockback := Vector2.ZERO
 
 func _ready():
-	# pega automaticamente o primeiro nó no grupo "player"
 	player = get_tree().get_first_node_in_group("player")
 
 func _physics_process(delta: float) -> void:

@@ -1,7 +1,43 @@
 [gd_scene format=3 uid="uid://b5a2ce0hwl6nk"]
 
-[ext_resource type="Texture2D" uid="uid://u3c1agdgvjar" path="res://enemy/sacola.png" id="1_sjapy"]
 [ext_resource type="Script" uid="uid://cqfh6qgip6v54" path="res://scripts/inmigo_sacola.gd" id="1_uhfv4"]
+[ext_resource type="Texture2D" uid="uid://nueoibu5bvjs" path="res://animations/sacola-Sheet.png" id="2_47djs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1t274"]
+atlas = ExtResource("2_47djs")
+region = Rect2(0, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nonc3"]
+atlas = ExtResource("2_47djs")
+region = Rect2(320, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hrr85"]
+atlas = ExtResource("2_47djs")
+region = Rect2(640, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_myw8u"]
+atlas = ExtResource("2_47djs")
+region = Rect2(960, 0, 320, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j4yee"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1t274")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nonc3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hrr85")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_myw8u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uhfv4"]
 size = Vector2(81, 67)
@@ -17,9 +53,10 @@ collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_uhfv4")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1416105460]
-scale = Vector2(0.037158206, 0.030473633)
-texture = ExtResource("1_sjapy")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=447744503]
+scale = Vector2(0.3738281, 0.29570314)
+sprite_frames = SubResource("SpriteFrames_j4yee")
+autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2030182818]
 position = Vector2(-3.5, -1)

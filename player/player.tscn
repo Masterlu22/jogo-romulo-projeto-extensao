@@ -9,13 +9,13 @@
 radius = 58.0
 height = 128.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yllr7"]
-atlas = ExtResource("2_yw30f")
-region = Rect2(0, 0, 100, 100)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_kb6p2"]
 atlas = ExtResource("2_yw30f")
 region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yllr7"]
+atlas = ExtResource("2_yw30f")
+region = Rect2(0, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g1dw6"]
 atlas = ExtResource("2_rkbax")
@@ -61,10 +61,10 @@ region = Rect2(300, 0, 100, 100)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yllr7")
+"texture": SubResource("AtlasTexture_kb6p2")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kb6p2")
+"texture": SubResource("AtlasTexture_yllr7")
 }],
 "loop": true,
 "name": &"attack",
@@ -133,7 +133,7 @@ monitoring = false
 monitorable = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hitbox_espada" unique_id=2111737108]
-polygon = PackedVector2Array(-30, 86, -12, 96, 9, 93, 53, 81, 84, 55, 106, 29, 107, -7, 113, -31, 130, -31, 139, -19, 141, -1, 142, 33, 138, 58, 95, 78, 62, 97, 26, 105, -17, 106, -47, 67, -7, 93)
+polygon = PackedVector2Array(-30, 86, -12, 96, 9, 93, 53, 81, 84, 55, 106, 29, 107, -7, 79, -58, 79, -81, 133, -28, 141, -1, 142, 33, 142, 53, 95, 78, 62, 97, 26, 105, -17, 106, -47, 67, -7, 93)
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="hitbox_espada" to="." method="_on_hitbox_espada_body_entered"]

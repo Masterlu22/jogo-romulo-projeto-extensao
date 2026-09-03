@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://c3o7r0uyph5cw"]
+
+[ext_resource type="Script" uid="uid://by4tvf1m453xj" path="res://enemy/inimigo_canudo.gd" id="1_3jld6"]
+[ext_resource type="Texture2D" uid="uid://b5jjp8kyw2iyj" path="res://animations/canudoAnimacao.png" id="2_a0jyt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dv0ob"]
+atlas = ExtResource("2_a0jyt")
+region = Rect2(0, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sgptm"]
+atlas = ExtResource("2_a0jyt")
+region = Rect2(320, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jgeyk"]
+atlas = ExtResource("2_a0jyt")
+region = Rect2(640, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dbi1w"]
+atlas = ExtResource("2_a0jyt")
+region = Rect2(960, 0, 320, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5dkfk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dv0ob")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sgptm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jgeyk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dbi1w")
+}],
+"loop": true,
+"name": &"andando",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3jld6"]
+bg_color = Color(1, 0, 0, 1)
+
+[node name="InimigoCanudo" type="CharacterBody2D" unique_id=397027987 groups=["canudo", "inimigos"]]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_3jld6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1886845628]
+scale = Vector2(0.31875, 0.265625)
+sprite_frames = SubResource("SpriteFrames_5dkfk")
+animation = &"andando"
+autoplay = "andando"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=234149810]
+scale = Vector2(0.3149674, 0.2502948)
+polygon = PackedVector2Array(-97, 38, -91, -11, -100, -32, -91, -50, -88, -81, -78, -114, -59, -146, -35, -159, 109, -159, 148, -149, 161, -141, 160, -104, 126, -71, 80, -81, 60, -97, 39, -112, 13, -112, -3, -79, -11, -62, -1, -41, -19, -4, -30, 50, -42, 99, -51, 137, -60, 159, -112, 159, -123, 127, -111, 84)
+
+[node name="Barra_vida_canudo" type="ProgressBar" parent="." unique_id=1694561716]
+custom_minimum_size = Vector2(60, 10)
+offset_left = -21.0
+offset_top = -61.0
+offset_right = 39.0
+offset_bottom = -51.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_3jld6")
+value = 100.0
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="area_dano" type="Area2D" parent="." unique_id=2783002]
+collision_layer = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="area_dano" unique_id=1614718223]
+scale = Vector2(0.30797914, 0.277368)
+polygon = PackedVector2Array(-62, 152, -53, 141, -9.74092, 3.6053183, 32.469734, -54.079773, 87.66828, -64.89573, 51.951572, -75.711685, 87.66828, -61.290413, 100.65617, -64.89573, 125, -70, 159, -104, 160, -143, 106, -160, -35, -161, -59, -146, -82, -108, -92, -58, -103, -31, -93, -9, -100, 44, -113, 84, -123, 132, -112, 158, -63, 161)
+
+[connection signal="body_entered" from="area_dano" to="." method="_on_area_dano_body_entered"]

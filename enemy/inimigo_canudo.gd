@@ -1,13 +1,13 @@
 extends CharacterBody2D
 
 var knockback := Vector2.ZERO
-var velocidade := 80.0
+var velocidade := 120.0
 var player: Node2D
 var vida := 100.0
 var alvo_especial = null
 var indo_para_tartaruga := false
 
-@onready var barra_vida = $Barra_vida_sacola
+@onready var barra_vida = $Barra_vida_canudo
 
 
 func _ready():
@@ -54,6 +54,7 @@ func set_alvo(alvo):
 	$area_dano.collision_mask |= 8
 		
 func _on_area_dano_body_entered(body: Node2D) -> void:
+	print("canudo tocou: ", body.name)
 	if body.is_in_group("player"):
 		body.tomar_dano(global_position)
 	elif body.is_in_group("tartarugas"):
